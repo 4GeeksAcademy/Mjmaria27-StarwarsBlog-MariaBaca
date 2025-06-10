@@ -1,0 +1,62 @@
+/* global.css */
+
+/* Reset mínimo y tipografía */
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa; /* gris muy claro */
+  color: #212529;            /* texto oscuro por defecto */
+}
+
+/* Contenedores y espaciado */
+.container {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
+/* Encabezados */
+h1, h2, h3 {
+  font-weight: 500;
+}
+
+/* Cartas: suave sombra y bordes redondeados */
+.card {
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Botones favoritos: ajustar tamaño del ícono */
+.btn-outline-warning {
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.25rem 0.6rem;
+}
+
+/* Navbar: letra un poco más grande */
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* Listas de detalles: separación */
+.list-group-item {
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+}
+
+/* Imágenes de tarjetas: altura fija y cover */
+.card-img-top {
+  height: 180px;
+  object-fit: cover;
+}
+
+/* Enlaces de navegación activos */
+.nav-link.active {
+  font-weight: 500;
+}
+
+/* Link hover */
+a:hover {
+  text-decoration: none;
+}
