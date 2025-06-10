@@ -1,16 +1,11 @@
 // src/main.jsx
+import "bootstrap/dist/css/bootstrap.min.css";  // si instalaste Bootstrap vía npm
+import "./styles/global.css";                  // tu CSS
 import React from "react";
 import ReactDOM from "react-dom/client";
 import { BrowserRouter } from "react-router-dom";
-
-// Context Provider
 import { AppProvider } from "./store.jsx";
-
-// Tu componente raíz
-import App from "./App";
-
-// Importa tu hoja de estilos global
-import "./styles/global.css";
+import App from "./App.jsx";
 
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
