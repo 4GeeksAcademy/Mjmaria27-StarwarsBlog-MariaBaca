@@ -5,7 +5,7 @@ html, body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #f8f9fa; /* gris muy claro */
+  background-color: #000000; /* gris muy claro */
   color: #212529;            /* texto oscuro por defecto */
 }
 
@@ -59,4 +59,36 @@ h1, h2, h3 {
 /* Link hover */
 a:hover {
   text-decoration: none;
+}
+/* Texto más grueso global */
+html, body {
+  font-weight: 500; /* base un poco más negrita */
+}
+
+/* Encabezados incluso más gruesos */
+h1, h2, h3 {
+  font-weight: 700; /* titulares bien marcados */
+}
+
+/* Cards: títulos y texto un poco más pesados */
+.card-title, .card-text {
+  font-weight: 600;
+}
+
+/* Navbar y enlaces */
+.navbar-brand, .nav-link {
+  font-weight: 600;
+}
+
+/* Botones */
+.btn {
+  font-weight: 600;
+}
+html {
+  scroll-behavior: smooth;
+}
+#characters,
+#planets,
+#vehicles {
+  scroll-margin-top: 70px; /* ajusta a la altura de tu navbar */
 }

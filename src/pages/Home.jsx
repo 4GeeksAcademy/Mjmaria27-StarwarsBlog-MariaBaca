@@ -5,37 +5,32 @@ import { useAppContext } from "../store.jsx";
 import Card from "../components/Card";
 
 const Home = () => {
-  // Lanza el fetch la primera vez
   useFetch();
-
-  // Saca del contexto los datos que llenó useFetch
   const { data } = useAppContext();
 
   return (
     <div className="container">
-      <h1 className="mt-4">Star Wars Blog</h1>
+      {/* Sólo el título principal */}
+      <h1 className="mt-4 text-light text-center">Star Wars Blog</h1>
 
-      {/* Sección de personajes */}
-      <h2 className="mt-5">Characters</h2>
-      <div className="d-flex flex-wrap">
+      {/* Sección de Characters */}
+      <div id="characters" className="mt-5 d-flex flex-wrap">
         {data.characters.map(item => (
-          <Card key={item.uid} item={item} />
+          <Card key={`people-${item.uid}`} item={item} />
         ))}
       </div>
 
-      {/* Sección de planetas */}
-      <h2 className="mt-5">Planets</h2>
-      <div className="d-flex flex-wrap">
+      {/* Sección de Planets */}
+      <div id="planets" className="mt-5 d-flex flex-wrap">
         {data.planets.map(item => (
-          <Card key={item.uid} item={item} />
+          <Card key={`planets-${item.uid}`} item={item} />
         ))}
       </div>
 
-      {/* Sección de vehículos */}
-      <h2 className="mt-5">Vehicles</h2>
-      <div className="d-flex flex-wrap">
+      {/* Sección de Vehicles */}
+      <div id="vehicles" className="mt-5 d-flex flex-wrap">
         {data.vehicles.map(item => (
-          <Card key={item.uid} item={item} />
+          <Card key={`vehicles-${item.uid}`} item={item} />
         ))}
       </div>
     </div>
