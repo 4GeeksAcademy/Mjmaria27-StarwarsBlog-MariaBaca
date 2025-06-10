@@ -1,16 +1,18 @@
 // src/App.jsx
 import React from "react";
-import { RoutesComponent } from "./routes";
 import Navbar from "./components/Navbar";
-import "./index.css"; // o "./global.css"
+import { RoutesComponent } from "./routes";
 
-function App() {
+const App = () => {
   return (
     <>
+      {/* Barra de navegación */}
       <Navbar />
+
+      {/* Aquí se renderizan Home, Details y Favorites */}
       <RoutesComponent />
     </>
   );
-}
+};
 
 export default App;
