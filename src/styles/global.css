@@ -1,94 +1,179 @@
-/* global.css */
+/* src/styles/global.css */
 
-/* Reset mínimo y tipografía */
+/* ============================= */
+/* ===== Reset & Base Styles ==== */
+/* ============================= */
+
 html, body {
   margin: 0;
   padding: 0;
   font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  background-color: #000000; /* gris muy claro */
-  color: #212529;            /* texto oscuro por defecto */
+  background-color: #000000;   /* fondo negro */
+  color: #e0e0e0;              /* texto claro */
+  font-weight: 500;            /* texto base más grueso */
+  scroll-behavior: smooth;     /* scroll suave */
 }
 
-/* Contenedores y espaciado */
+/* ============================= */
+/* ===== Container Spacing ===== */
+/* ============================= */
+
 .container {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
+  padding: 1rem 0;
 }
 
-/* Encabezados */
+/* ============================= */
+/* ======= Typography ========== */
+/* ============================= */
+
 h1, h2, h3 {
-  font-weight: 500;
+  font-weight: 700;            /* títulos bien marcados */
 }
 
-/* Cartas: suave sombra y bordes redondeados */
-.card {
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+/* ============================= */
+/* ===== Scroll Anchors ======== */
+/* ============================= */
+
+#characters,
+#planets,
+#vehicles {
+  scroll-margin-top: 70px;     /* evita ocultar sección bajo navbar */
 }
 
-/* Botones favoritos: ajustar tamaño del ícono */
-.btn-outline-warning {
-  font-size: 1.2rem;
-  line-height: 1;
-  padding: 0.25rem 0.6rem;
-}
+/* ============================= */
+/* ======== Navbar Styling ===== */
+/* ============================= */
 
-/* Navbar: letra un poco más grande */
+.navbar {
+  background-color: #000000 !important;
+}
 .navbar-brand {
+  padding: 0;
   font-size: 1.5rem;
   font-weight: 600;
 }
-
-/* Listas de detalles: separación */
-.list-group-item {
-  padding-top: 0.75rem;
-  padding-bottom: 0.75rem;
+.navbar-brand img {
+  display: block;
+  margin: 0 auto;
+  height: 50px;
+  object-fit: contain;
+}
+.nav-link {
+  font-weight: 600;
+  color: #e0e0e0 !important;
+}
+.nav-link.small {
+  font-size: 0.75rem;
+}
+.nav-link.active {
+  color: #ffffff !important;
 }
 
-/* Imágenes de tarjetas: altura fija y cover */
+/* ============================= */
+/* ======== Card Styling ====== */
+/* ============================= */
+
+.card {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
 .card-img-top {
+  background-color: #000000;
   height: 180px;
   object-fit: cover;
 }
-
-/* Enlaces de navegación activos */
-.nav-link.active {
-  font-weight: 500;
+.card-body, .card-text, .card-title {
+  color: #e0e0e0;
 }
-
-/* Link hover */
-a:hover {
-  text-decoration: none;
-}
-/* Texto más grueso global */
-html, body {
-  font-weight: 500; /* base un poco más negrita */
-}
-
-/* Encabezados incluso más gruesos */
-h1, h2, h3 {
-  font-weight: 700; /* titulares bien marcados */
-}
-
-/* Cards: títulos y texto un poco más pesados */
 .card-title, .card-text {
   font-weight: 600;
 }
 
-/* Navbar y enlaces */
-.navbar-brand, .nav-link {
-  font-weight: 600;
-}
+/* ============================= */
+/* ======== Button Styling ===== */
+/* ============================= */
 
-/* Botones */
 .btn {
   font-weight: 600;
 }
-html {
-  scroll-behavior: smooth;
+.btn-outline-primary {
+  border-color: #555555;
+  color: #e0e0e0;
 }
-#characters,
-#planets,
-#vehicles {
-  scroll-margin-top: 70px; /* ajusta a la altura de tu navbar */
+.btn-outline-primary:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+.btn-outline-warning {
+  border-color: #555555;
+  color: #e0e0e0;
+  font-size: 1.2rem;
+  line-height: 1;
+  padding: 0.25rem 0.6rem;
+}
+.btn-outline-warning:hover {
+  background-color: #444444;
+  color: #ffffff;
+}
+
+/* ============================= */
+/* ======= List Group Styling == */
+/* ============================= */
+
+.list-group-item {
+  background-color: #1e1e1e;
+  border: 1px solid #333333;
+  color: #e0e0e0;
+  padding: 0.75rem 1rem;
+}
+
+/* ============================= */
+/* ===== Horizontal Scroll ===== */
+/* ============================= */
+
+.d-flex.overflow-auto {
+  flex-wrap: nowrap;
+  gap: 1rem;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  scrollbar-width: thin;
+  scrollbar-color: #555555 #1e1e1e;
+}
+.d-flex.overflow-auto::-webkit-scrollbar {
+  height: 6px;
+}
+.d-flex.overflow-auto::-webkit-scrollbar-track {
+  background: #1e1e1e;
+}
+.d-flex.overflow-auto::-webkit-scrollbar-thumb {
+  background-color: #555555;
+  border-radius: 3px;
+}
+
+/* ============================= */
+/* ===== Utility Classes ======= */
+/* ============================= */
+
+.text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+a:hover, .nav-link:hover {
+  text-decoration: none;
+}
+
+.favorite-item button:hover {
+  color: #ff4d4f;
+}
+/* Quita subrayado de todos los btn-link */
+.btn-link {
+  text-decoration: none !important;
+}
+.btn-link:hover,
+.btn-link:focus {
+  text-decoration: none !important;
 }

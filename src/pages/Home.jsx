@@ -1,4 +1,3 @@
-// src/pages/Home.jsx
 import React from "react";
 import { useFetch } from "../hooks/useFetch";
 import { useAppContext } from "../store.jsx";
@@ -8,31 +7,54 @@ const Home = () => {
   useFetch();
   const { data } = useAppContext();
 
+  // helper que puedes extraer si lo usas en varios sitios
+  const scrollStyle = {
+    gap: "1rem",
+    overflowX: "auto",
+    overflowY: "hidden",
+    whiteSpace: "nowrap",
+    paddingBottom: "1rem"
+  };
+
   return (
-    <div className="container">
-      {/* Sólo el título principal */}
-      <h1 className="mt-4 text-light text-center">Star Wars Blog</h1>
+    <div className="container py-4">
+      <h1 className="text-center text-light mb-5">Star Wars Blog</h1>
 
-      {/* Sección de Characters */}
-      <div id="characters" className="mt-5 d-flex flex-wrap">
-        {data.characters.map(item => (
-          <Card key={`people-${item.uid}`} item={item} />
-        ))}
-      </div>
+      {/* Characters */}
+      <section id="characters" className="mb-5">
+        <h2 className="text-light mb-3">Characters</h2>
+        <div className="d-flex flex-nowrap" style={scrollStyle}>
+          {data.characters.map(item => (
+            <div key={item.uid} style={{ display: "inline-block" }}>
+              <Card item={item} />
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Sección de Planets */}
-      <div id="planets" className="mt-5 d-flex flex-wrap">
-        {data.planets.map(item => (
-          <Card key={`planets-${item.uid}`} item={item} />
-        ))}
-      </div>
+      {/* Planets */}
+      <section id="planets" className="mb-5">
+        <h2 className="text-light mb-3">Planets</h2>
+        <div className="d-flex flex-nowrap" style={scrollStyle}>
+          {data.planets.map(item => (
+            <div key={item.uid} style={{ display: "inline-block" }}>
+              <Card item={item} />
+            </div>
+          ))}
+        </div>
+      </section>
 
-      {/* Sección de Vehicles */}
-      <div id="vehicles" className="mt-5 d-flex flex-wrap">
-        {data.vehicles.map(item => (
-          <Card key={`vehicles-${item.uid}`} item={item} />
-        ))}
-      </div>
+      {/* Vehicles */}
+      <section id="vehicles" className="mb-5">
+        <h2 className="text-light mb-3">Vehicles</h2>
+        <div className="d-flex flex-nowrap" style={scrollStyle}>
+          {data.vehicles.map(item => (
+            <div key={item.uid} style={{ display: "inline-block" }}>
+              <Card item={item} />
+            </div>
+          ))}
+        </div>
+      </section>
     </div>
   );
 };
